@@ -24,6 +24,7 @@ const Sidebar = () => {
 
   return (
     <>
+    
       <div
         className={`${
           open ? 'w-60' : 'w-fit'
