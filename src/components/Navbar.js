@@ -1,5 +1,6 @@
 import React from 'react'
 import Toggle from './ThemeToggle'
+import Logout from '../components/Logout'
 
 const Navbar = () => {
   return (
@@ -14,6 +15,9 @@ const Navbar = () => {
         <div className='flex justify-end pr-4'>
           <Toggle />
         </div>
+        <div>
+                    <Logout />
+                    </div>
       </div>
     </nav>
   )

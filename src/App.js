@@ -1,7 +1,5 @@
 import Layout from './components/Layout'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-
-import Home from './pages/Home'
 import Dashboard from './pages/Dashboard'
 import Docs from './pages/Docs'
 import History from './pages/History'
@@ -13,7 +11,7 @@ function App() {
         <BrowserRouter>
             <Layout>
                 <Routes>
-                    <Route path='/' element={<Home />} />
+                    <Route path='/' element={<Dashboard />} />
                     <Route path='/dashboard' element={<Dashboard />} />
                     <Route path='/history' element={<History />} />
                     <Route path='/Docs' element={<Docs />} />

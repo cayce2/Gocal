@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 import { BsArrowLeftCircle } from 'react-icons/bs'
-import { AiFillPieChart } from 'react-icons/ai'
-import { SiFuturelearn } from 'react-icons/si'
-import { SiOpenaccess } from 'react-icons/si'
-import { CgProfile } from 'react-icons/cg'
+import { MdOutlineDashboardCustomize } from "react-icons/md";
+import { SiMaterialformkdocs } from "react-icons/si";
+import { MdConnectWithoutContact } from "react-icons/md";
+import { SiCompilerexplorer } from "react-icons/si";
+import { GoHistory } from "react-icons/go";
 import Logo from '../assets/images/logo.png'
 import HamburgerButton from './HumburgerMenuButton/HamburgerButton'
 
@@ -15,11 +16,11 @@ const Sidebar = () => {
   const location = useLocation()
 
   const Menus = [
-    { title: 'Dashboard', path: '/dashboard', src: <AiFillPieChart /> },
-    { title: 'Docs', path: '/Docs', src: <SiFuturelearn /> },
-    { title: 'History', path: '/History', src: <CgProfile /> },
-    { title: 'Contacts', path: '/Contacts', src: <SiOpenaccess /> },
-    { title: 'Settings', path: '/Settings', src: <SiOpenaccess />, gap: 'true' },
+    { title: 'Dashboard', path: '/dashboard', src: <MdOutlineDashboardCustomize /> },
+    { title: 'Docs', path: '/Docs', src: <SiMaterialformkdocs /> },
+    { title: 'History', path: '/History', src: <GoHistory /> },
+    { title: 'Contacts', path: '/Contacts', src: <MdConnectWithoutContact /> },
+    { title: 'Settings', path: '/Settings', src: <SiCompilerexplorer />, gap: 'true' },    
   ]
 
   return (
