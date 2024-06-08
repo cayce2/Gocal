@@ -25,8 +25,6 @@ export default function Dashboard() {
       <div className="px-4 sm:px-0">
           <Form />
         </div>
-
-      <Form />
     </div>
   );
 }
