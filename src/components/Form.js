@@ -1,27 +1,14 @@
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
 
-export default function Example() {
-  return (
-    <div>
-    <form>
+  
+export default function Form() {
+return (
+  <div>
+    <form id="form">
       <div className="space-y-12">
         <div className="border-b border-gray-900/10 pb-12">
-          <h2 className="text-base font-semibold leading-7 text-gray-900">Profile</h2>
+          <h2 className="text-base font-semibold leading-7 text-gray-900">Dashboard</h2>
           <p className="mt-1 text-sm leading-6 text-gray-600">
-            This information will be displayed publicly so be careful what you share.
+            This information will be shared with the admin office!
           </p>
         </div>
 
@@ -29,7 +16,7 @@ export default function Example() {
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
             <div className="sm:col-span-3">
               <label htmlFor="first-name" className="block text-sm font-medium leading-6 text-gray-900">
-                First name
+                Full Name
               </label>
               <div className="mt-2">
                 <input
@@ -44,14 +31,14 @@ export default function Example() {
 
             <div className="sm:col-span-3">
               <label htmlFor="last-name" className="block text-sm font-medium leading-6 text-gray-900">
-                Last name
+                Employee No.
               </label>
               <div className="mt-2">
                 <input
-                  type="text"
-                  name="last-name"
-                  id="last-name"
-                  autoComplete="family-name"
+                  type="varchar"
+                  name="employee-no"
+                  id="employee-no"
+                  autoComplete="employee-no"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -59,14 +46,14 @@ export default function Example() {
 
             <div className="sm:col-span-2 sm:col-start-1">
               <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-                Email address
+                Date
               </label>
               <div className="mt-2">
                 <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
+                  id="date"
+                  name="date"
+                  type="date"
+                  autoComplete="date"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -74,62 +61,76 @@ export default function Example() {
 
             <div className="sm:col-span-2">
               <label htmlFor="country" className="block text-sm font-medium leading-6 text-gray-900">
-                Country
+                Shift
               </label>
               <div className="mt-2">
                 <select
-                  id="country"
-                  name="country"
-                  autoComplete="country-name"
+                  id="shift"
+                  name="shift"
+                  autoComplete="shift-name"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                 >
-                  <option>United States</option>
-                  <option>Canada</option>
-                  <option>Mexico</option>
+                  <option>12:00 -21:00 </option>
+                  <option>14:00 - 23:00</option>
+                  <option>15:00 - 00:00</option>
+                  <option>15:30 - 05:30</option>
+                  <option>22:00 - 07:00</option>
+                  <option>13:00 - 22:00</option>
+                  <option>18:30-04:00</option>
+                  <option>21:30-07:00</option>
+                  <option>12:30 - 21:30</option>
                 </select>
               </div>
             </div>
 
             <div className="sm:col-span-2">
-              <label htmlFor="street-address" className="block text-sm font-medium leading-6 text-gray-900">
-                Street address
+              <label htmlFor="country" className="block text-sm font-medium leading-6 text-gray-900">
+                Route
               </label>
               <div className="mt-2">
-                <input
-                  type="text"
-                  name="street-address"
-                  id="street-address"
-                  autoComplete="street-address"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
+                <select
+                  id="route"
+                  name="route"
+                  autoComplete="route-name"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                >
+                  <option>Waiyaki Way</option>
+                  <option>Lower Kabete</option>
+                  <option>Ngong Road</option>
+                  <option>Mombasa Road</option>
+                  <option>Jogoo Road</option>
+                  <option>Thika Road</option>
+                </select>
               </div>
             </div>
 
             <div className="sm:col-span-2 sm:col-start-1">
               <label htmlFor="city" className="block text-sm font-medium leading-6 text-gray-900">
-                City
+                Destination
               </label>
               <div className="mt-2">
-                <input
-                  type="text"
-                  name="city"
-                  id="city"
-                  autoComplete="address-level2"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
+                <select
+                  id="route"
+                  name="route"
+                  autoComplete="route-name"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                >
+                  <option>Delta</option>
+                  <option>Westend</option>
+                </select>
               </div>
             </div>
 
             <div className="sm:col-span-2">
               <label htmlFor="region" className="block text-sm font-medium leading-6 text-gray-900">
-                State / Province
+                Estate / Building name
               </label>
               <div className="mt-2">
                 <input
                   type="text"
-                  name="region"
-                  id="region"
-                  autoComplete="address-level1"
+                  name="estate"
+                  id="estate"
+                  autoComplete="estate-name"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -137,21 +138,20 @@ export default function Example() {
 
             <div className="sm:col-span-2">
               <label htmlFor="postal-code" className="block text-sm font-medium leading-6 text-gray-900">
-                ZIP / Postal code
+                Phone No.
               </label>
               <div className="mt-2">
                 <input
-                  type="text"
-                  name="postal-code"
-                  id="postal-code"
-                  autoComplete="postal-code"
+                  type="tel"
+                  name="tel-no"
+                  id="tel-no"
+                  autoComplete="tel-no"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
           </div>
         </div>
-        
       </div>
 
       <div className="mt-6 flex items-center justify-end gap-x-6">
@@ -167,28 +167,6 @@ export default function Example() {
       </div>
     </form>
 
-    <script>
-        document.getElementById('form').addEventListener('submit', async function(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-
-            const response = await fetch('/api/forms', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ name, email, message })
-            });
-
-            const data = await response.json();
-            console.log(data);
-        });
-    </script>
-
-    </div>
-
-    
-  )
+  </div>
+);
 }

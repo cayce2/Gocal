@@ -1,5 +1,5 @@
 import React from 'react'
-import Toggle from './ThemeToggle'
+//*import Toggle from './ThemeToggle'
 import Logout from '../components/Logout'
 
 const Navbar = () => {
@@ -12,9 +12,9 @@ const Navbar = () => {
           </span>
         </div>
 
-        <div className='flex justify-end pr-4'>
+        {/*<div className='flex justify-end pr-4'>
           <Toggle />
-        </div>
+  </div>}*/}
         <div>
                     <Logout />
                     </div>
