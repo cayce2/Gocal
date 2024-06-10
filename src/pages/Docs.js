@@ -32,7 +32,7 @@ export default function Docs() {
                     </div>
                   </div>
                   <div className="ml-4 flex-shrink-0">
-                    <a href="../assets/images/Docs/Green Zone.xlsx"  className="font-medium text-indigo-600 hover:text-indigo-500" download>
+                    <a href="./Green Zone.xlsx"  className="font-medium text-indigo-600 hover:text-indigo-500" download>
                       Download
                     </a>
                   </div>
