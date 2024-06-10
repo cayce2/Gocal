@@ -1,22 +1,14 @@
 const mongoose = require('mongoose');
 
-const FormSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true
-  },
-  email: {
-    type: String,
-    required: true
-  },
-  message: {
-    type: String,
-    required: true
-  },
-  date: {
-    type: Date,
-    default: Date.now
-  }
+const formSchema = new mongoose.Schema({
+  fullName: { type: String, required: true },
+  employeeNo: { type: String, required: true },
+  date: { type: Date, required: true },
+  shift: { type: String, required: true },
+  route: { type: String, required: true },
+  destination: { type: String, required: true },
+  estate: { type: String, required: true },
+  phoneNo: { type: String, required: true }
 });
 
-module.exports = mongoose.model('Form', FormSchema);
+module.exports = mongoose.model('Form', formSchema);
