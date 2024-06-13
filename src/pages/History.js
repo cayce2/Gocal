@@ -26,9 +26,6 @@ const History = () => {
 };
 
 const TABLE_HEAD = ["Name", "Date", "Shift", "Route", "Phone"];
-const TABLE_ROWS = [
-  { Name: "John Doe", Date: "2024-06-12", Shift: "Morning", Route: "A1", Phone: "123-456-7890" },
-  // Add other rows as needed
 ];
 
 const DefaultTable = ({ data }) => {
