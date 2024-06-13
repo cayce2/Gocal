@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { Card, Typography } from "@material-tailwind/react";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const History = () => {
   const [data, setData] = useState([]);
@@ -20,104 +19,39 @@ const History = () => {
   }, []);
 
   return (
-    // Assuming you want to render DefaultTable here with the fetched data
-    <DefaultTable data={data} />
-  );
-};
-
-const TABLE_HEAD = ["Name", "Date", "Shift", "Route", "Phone"];
-
-const DefaultTable = ({ data }) => {
-  return (
-    <Card className="h-full w-full overflow-scroll">
-      <table className="w-full min-w-max table-auto text-left">
-        <thead>
-          <tr>
-            {TABLE_HEAD.map((head) => (
-              <th
-                key={head}
-                className="border-b border-blue-gray-100 bg-blue-gray-50 p-4"
-              >
-                <Typography
-                  variant="small"
-                  color="blue-gray"
-                  className="font-normal leading-none opacity-70"
-                >
-                  {head}
-                </Typography>
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {data.map(({ Name, Date, Shift, Route, Phone }, index) => {
-            const isLast = index === data.length - 1;
-            const classes = isLast ? "p-4" : "p-4 border-b border-blue-gray-50";
-
-            return (
-              <tr key={Name}>
-                <td className={classes}>
-                  <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="font-normal"
-                  >
-                    {Name}
-                  </Typography>
-                </td>
-                <td className={classes}>
-                  <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="font-normal"
-                  >
-                    {Date}
-                  </Typography>
-                </td>
-                <td className={classes}>
-                  <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="font-normal"
-                  >
-                    {Shift}
-                  </Typography>
-                </td>
-                <td className={classes}>
-                  <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="font-normal"
-                  >
-                    {Route}
-                  </Typography>
-                </td>
-                <td className={classes}>
-                  <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="font-normal"
-                  >
-                    {Phone}
-                  </Typography>
-                </td>
-                <td className={classes}>
-                  <Typography
-                    as="a"
-                    href="#"
-                    variant="small"
-                    color="blue-gray"
-                    className="font-medium"
-                  >
-                    Edit
-                  </Typography>
-                </td>
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-semibold mb-4">History</h1>
+      <div className="overflow-x-auto">
+        <table className="table-auto w-full">
+          <thead>
+            <tr className="bg-gray-100">
+              <th className="px-4 py-2">Full Name</th>
+              <th className="px-4 py-2">Employee No.</th>
+              <th className="px-4 py-2">Date</th>
+              <th className="px-4 py-2">Shift</th>
+              <th className="px-4 py-2">Route</th>
+              <th className="px-4 py-2">Destination</th>
+              <th className="px-4 py-2">Estate / Building</th>
+              <th className="px-4 py-2">Phone No.</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((item, index) => (
+              <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : ''}>
+                <td className="border px-4 py-2">{item.fullName}</td>
+                <td className="border px-4 py-2">{item.employeeNo}</td>
+                <td className="border px-4 py-2">{new Date(item.date).toLocaleDateString()}</td>
+                <td className="border px-4 py-2">{item.shift}</td>
+                <td className="border px-4 py-2">{item.route}</td>
+                <td className="border px-4 py-2">{item.destination}</td>
+                <td className="border px-4 py-2">{item.estate}</td>
+                <td className="border px-4 py-2">{item.phoneNo}</td>
               </tr>
-            );
-          })}
-        </tbody>
-      </table>
-    </Card>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
 };
 
