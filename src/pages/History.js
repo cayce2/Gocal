@@ -26,7 +26,6 @@ const History = () => {
 };
 
 const TABLE_HEAD = ["Name", "Date", "Shift", "Route", "Phone"];
-];
 
 const DefaultTable = ({ data }) => {
   return (
