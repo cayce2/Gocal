@@ -3,6 +3,7 @@ import axios from 'axios';
 
 const History = () => {
   const [data, setData] = useState([]);
+  const [totalRecords, setTotalRecords] = useState(0); // New state for total records
 
   useEffect(() => {
     // Fetch the data from the backend
@@ -10,6 +11,7 @@ const History = () => {
       try {
         const response = await axios.get('http://localhost:5000/form');
         setData(response.data);
+        setTotalRecords(response.data.length); // Update total records
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -21,6 +23,7 @@ const History = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-semibold mb-4">History</h1>
+      <p className="mb-4">Total Records: {totalRecords}</p> {/* Display total records */}
       <div className="overflow-x-auto">
         <table className="table-auto w-full">
           <thead>
