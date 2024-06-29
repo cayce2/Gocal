@@ -8,12 +8,13 @@ import Settings from './pages/Settings'
 import Contacts from './pages/Contacts'
 //import Login from './components/Login/login'
 
- {/*function App() {
+ /*function App() {
     const [token, setToken] = useState();
 
     if(!token) {
         return <Login setToken={setToken} />
-      }*/}
+      }
+      */
 
     return (
         <BrowserRouter>
