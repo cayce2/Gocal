@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import '../Login/login.css';
 
-export default function Login() {
+export default function Login({ setToken }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -16,7 +17,7 @@ export default function Login() {
       });
 
       if (response.data.token) {
-        // Save the token in localStorage or context
+        setToken(response.data.token);
         localStorage.setItem('token', response.data.token);
         alert('Login successful!');
       }
@@ -50,6 +51,7 @@ export default function Login() {
           <button type="submit">Submit</button>
         </div>
       </form>
+      <p>Don't have an account? <Link to="/register">Register here</Link></p>
     </div>
   );
 }

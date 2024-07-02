@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const formRoutes = require('./routes/form');
-const loginRoutes = require('./routes/login')
+const authRoutes = require('./routes/auth');
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -11,7 +11,7 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(bodyParser.json());
 app.use('/form', formRoutes);
-app.use('/login', loginRoutes);
+app.use('/login', authRoutes);
 
 mongoose.connect('mongodb+srv://calebmumbi2:Hackerspremier!1997@cluster0.pdo5agn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
   useNewUrlParser: true,
