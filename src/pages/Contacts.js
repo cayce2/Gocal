@@ -13,7 +13,7 @@ export default function App() {
         <div className="space-y-12">
           <div className="flex flex-col text-center w-full mb-12">
             <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
-              Contact Us
+              Feedback!
             </h1>
             <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
               Let your voice be heard!
