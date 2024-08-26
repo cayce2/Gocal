@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Form() {
   const handleSubmit = async (event) => {
@@ -13,20 +15,22 @@ export default function Form() {
       route: event.target['route'].value,
       destination: event.target['destination'].value,
       estate: event.target['estate'].value,
-      phoneNo: event.target['tel-no'].value
+      phoneNo: event.target['tel-no'].value,
     };
 
     try {
       const response = await axios.post('http://localhost:5000/form', formData);
       console.log(response.data);
-      alert('Form submitted successfully!');
+      toast.success('Form submitted successfully!');
     } catch (error) {
       console.error('There was an error submitting the form!', error);
+      toast.error('Failed to submit form. Please try again.');
     }
   };
 
   return (
     <div>
+      <ToastContainer />
       <form id="form" onSubmit={handleSubmit}>
         <div className="space-y-12">
           <div className="border-b border-gray-900/10 pb-12">

@@ -3,6 +3,7 @@ const router = express.Router();
 const Joi = require('joi');
 const Form = require('../models/Form');
 
+
 // Define the validation schema using Joi
 const formSchema = Joi.object({
   fullName: Joi.string().required(),
@@ -27,7 +28,7 @@ const validateForm = (req, res, next) => {
 // Handle form submission
 router.post('/', validateForm, async (req, res) => {
   const { fullName, employeeNo, date, shift, route, destination, estate, phoneNo } = req.body;
-  
+
   const newForm = new Form({
     fullName,
     employeeNo,
@@ -44,6 +45,16 @@ router.post('/', validateForm, async (req, res) => {
     res.status(201).json({ message: 'Form data saved successfully!' });
   } catch (err) {
     res.status(500).json({ error: 'Failed to save form data' });
+  }
+});
+
+// Delete a specific form submission
+router.delete('/:id', async (req, res) => {
+  try {
+    await Form.findByIdAndDelete(req.params.id);
+    res.status(200).send({ message: 'Record deleted successfully' });
+  } catch (error) {
+    res.status(500).send({ message: 'Error deleting record' });
   }
 });
 
