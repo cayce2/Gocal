@@ -19,7 +19,7 @@ const Sidebar = () => {
     { title: 'Dashboard', path: '/dashboard', src: <MdOutlineDashboardCustomize /> },
     { title: 'Docs', path: '/Docs', src: <SiMaterialformkdocs /> },
     { title: 'History', path: '/History', src: <GoHistory /> },
-    { title: 'Contacts', path: '/Contacts', src: <MdConnectWithoutContact /> },
+    { title: 'Feedback', path: '/Contacts', src: <MdConnectWithoutContact /> },
     { title: 'Settings', path: '/Settings', src: <SiCompilerexplorer />, gap: 'true' },    
   ]
 
